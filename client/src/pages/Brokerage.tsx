@@ -103,7 +103,7 @@ export default function Brokerage() {
             {/* IDX Quick Search Widget */}
             <IDXEmbed
               embedType="search"
-              scriptSrc="//atlanterealtytc.idxbroker.com/idx/quicksearchjs.php?widgetid=34193"
+              scriptSrc="//atlanterealtytc.com/idx/quicksearchjs.php?widgetid=34193"
               containerId="idxwidgetsrc-34193"
               className="mb-8"
             />
@@ -111,7 +111,7 @@ export default function Brokerage() {
             {/* IDX Map Results */}
             <IDXEmbed
               embedType="map"
-              scriptSrc="//atlanterealtytc.idxbroker.com/idx/widgets/120610"
+              scriptSrc="//atlanterealtytc.com/idx/widgets/120610"
               containerId="idxwidgetsrc-120610"
               className="mb-8"
             />
