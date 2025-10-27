@@ -111,8 +111,8 @@ export default function Brokerage() {
             {/* IDX Map Results */}
             <IDXEmbed
               embedType="map"
-              scriptSrc="//atlanterealtytc.com/idx/widgets/120610"
-              containerId="idxwidgetsrc-120610"
+              scriptSrc="//search.atlanterealtytc.com/idx/mapwidgetjs.php?widgetid=34196"
+              containerId="idxwidgetsrc-34196"
               className="mb-8"
             />
           </div>
