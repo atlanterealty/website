@@ -32,7 +32,7 @@ export default function FeaturedListings() {
         <IDXEmbed
           embedType="showcase"
           className="mb-8"
-          scriptSrc="//atlanterealtytc.idxbroker.com/idx/widgets/120607"
+          scriptSrc="//atlanterealtytc.com/idx/widgets/120607"
           containerId="idxwidgetsrc-120607"
         />
         
