@@ -103,7 +103,7 @@ export default function Brokerage() {
             {/* IDX Quick Search Widget */}
             <IDXEmbed
               embedType="search"
-              scriptSrc="//atlanterealtytc.com/idx/quicksearchjs.php?widgetid=34193"
+              scriptSrc="//search.atlanterealtytc.com/idx/quicksearchjs.php?widgetid=34193"
               containerId="idxwidgetsrc-34193"
               className="mb-8"
             />
