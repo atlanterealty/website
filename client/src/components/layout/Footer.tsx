@@ -1,23 +1,20 @@
 import { Link } from "wouter";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import NewsletterForm from "@/components/forms/NewsletterForm";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const services = [
-  { name: "Real Estate Brokerage", href: "/brokerage" },
-  { name: "Property Search", href: "/brokerage" },
+  { name: "Search Properties", href: "/brokerage" },
+  { name: "Our Services", href: "/services" },
+  { name: "Residential Brokerage", href: "/services?service=residential-brokerage" },
+  { name: "Property Management", href: "/services?service=property-management" },
+  { name: "Planning & Development", href: "/services?service=planning-development" },
   { name: "Real Estate School", href: "/school" },
-  { name: "Development Consulting", href: "/development" },
-  { name: "Property Management", href: "/property-management" },
 ];
 
 const resources = [
-  { name: "Market Reports", href: "/blog" },
-  { name: "Blog", href: "/blog" },
+  { name: "About Us", href: "/about" },
+  { name: "Contact Us", href: "/contact" },
+  { name: "News & Updates", href: "/blog" },
   { name: "Agent Directory", href: "/agents" },
-  { name: "Community Guide", href: "/blog" },
-  { name: "Donation Portal", href: "/donate" },
 ];
 
 const legal = [
@@ -145,11 +142,6 @@ export default function Footer() {
               </div>
             </div>
             
-            {/* Email Signup */}
-            <div className="space-y-3">
-              <h5 className="font-medium">Newsletter Signup</h5>
-              <NewsletterForm />
-            </div>
           </div>
         </div>
         

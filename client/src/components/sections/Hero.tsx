@@ -1,4 +1,6 @@
-import PropertySearchForm from "@/components/forms/PropertySearchForm";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { Search } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -15,7 +17,7 @@ export default function Hero() {
       <div className="relative container mx-auto px-4 py-20 lg:py-32 min-h-screen flex items-center">
         <div className="max-w-3xl">
           {/* Hero Content */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-serif font-bold text-white leading-tight">
                 Your Complete{" "}
@@ -28,8 +30,18 @@ export default function Hero() {
               </p>
             </div>
             
-            {/* Search CTA */}
-            <PropertySearchForm />
+            {/* Search CTA Button */}
+            <div className="pt-8">
+              <Link href="/brokerage">
+                <Button
+                  size="lg"
+                  className="gradient-gold text-white hover:opacity-90 transition-opacity shadow-gold text-lg px-8 py-4"
+                >
+                  <Search className="h-5 w-5 mr-2" />
+                  Search Properties
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

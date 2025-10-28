@@ -14,7 +14,6 @@ import About from "@/pages/About";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import Contact from "@/pages/Contact";
-import Donate from "@/pages/Donate";
 
 function Router() {
   return (
@@ -29,7 +28,6 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/contact" component={Contact} />
-      <Route path="/donate" component={Donate} />
       <Route component={NotFound} />
     </Switch>
   );
