@@ -88,10 +88,8 @@ export default function IDXEmbed({
         <div className="w-full">
           <iframe
             ref={iframeRef}
-            className="w-full border-0"
+            className={`w-full border-0 ${embedType === 'search' ? 'h-[600px] md:h-[800px] lg:h-[1000px]' : 'h-[400px] md:h-[500px] lg:h-[600px]'}`}
             style={{
-              minHeight: embedType === 'search' ? '800px' : '400px',
-              height: embedType === 'search' ? '1000px' : '500px',
               overflow: 'hidden'
             }}
             title={`IDX ${embedType} Widget`}

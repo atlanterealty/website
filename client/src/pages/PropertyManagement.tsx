@@ -74,7 +74,7 @@ const pricingTiers = [
   {
     name: "Residential",
     description: "Perfect for single-family homes and small multi-unit properties",
-    rate: "8%",
+    rate: "Contact for quote",
     features: [
       "Tenant screening & placement",
       "Rent collection & accounting",
@@ -98,7 +98,7 @@ const pricingTiers = [
   {
     name: "Portfolio",
     description: "Customized solutions for large property portfolios",
-    rate: "Custom pricing",
+    rate: "Contact for quote",
     features: [
       "Dedicated account manager",
       "Custom reporting",
@@ -248,7 +248,7 @@ export default function PropertyManagement() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
-                Transparent Pricing
+                Pricing
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Our management fees are competitive and only charged when your property is occupied

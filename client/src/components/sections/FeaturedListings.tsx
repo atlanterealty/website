@@ -32,6 +32,15 @@ export default function FeaturedListings() {
             height: 100%;
             overflow: hidden !important;
           }
+          @media (max-width: 768px) {
+            html, body {
+              font-size: 14px !important;
+            }
+            #idxwidgetsrc-120607 {
+              min-height: 500px !important;
+              height: 500px !important;
+            }
+          }
           #idxwidgetsrc-120607 {
             width: 100% !important;
             max-width: 100% !important;
@@ -116,11 +125,7 @@ export default function FeaturedListings() {
         <div className="mb-8">
           <iframe
             ref={iframeRef}
-            className="w-full border-0 rounded-lg"
-            style={{
-              minHeight: '800px',
-              height: '800px'
-            }}
+            className="w-full border-0 rounded-lg h-[500px] md:h-[600px] lg:h-[800px]"
             title="Featured Properties Widget"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads"
             loading="eager"

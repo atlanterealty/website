@@ -209,7 +209,7 @@ export default function Development() {
                           alt={project.title}
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop';
+                            (e.target as HTMLImageElement).src = '/images/aerial-treasure-coast.png';
                           }}
                         />
                         <div className="absolute top-4 right-4">

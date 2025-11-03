@@ -129,7 +129,7 @@ const pricingTiers = [
   {
     name: "Residential",
     description: "Perfect for single-family homes and small multi-unit properties",
-    rate: "8%",
+    rate: "Contact for quote",
     features: [
       "Tenant screening & placement",
       "Rent collection & accounting",
@@ -161,7 +161,7 @@ const pricingTiers = [
   {
     name: "Portfolio",
     description: "Customized solutions for large property portfolios",
-    rate: "Custom pricing",
+    rate: "Contact for quote",
     features: [
       "Dedicated account manager",
       "Custom reporting",
@@ -332,7 +332,7 @@ export default function PropertyManagementService() {
 
       {/* Pricing Section */}
       <div>
-        <h3 className="text-2xl font-semibold text-foreground mb-6">Transparent Pricing</h3>
+        <h3 className="text-2xl font-semibold text-foreground mb-6">Pricing</h3>
         <div className="grid lg:grid-cols-3 gap-8">
           {pricingTiers.map((tier, index) => (
             <Card key={index} className="relative hover:shadow-xl transition-all duration-300">

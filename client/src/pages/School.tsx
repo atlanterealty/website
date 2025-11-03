@@ -84,8 +84,8 @@ export default function School() {
                   Launch Your <span className="text-gradient-gold">Real Estate Career</span>
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Get the education and licensing you need to succeed in Florida real estate. 
-                  Our state-approved courses are taught by industry experts with decades of experience.
+                  Get the education and licensing you need to succeed in Florida real estate.
+                  Our state-approved courses are taught by licensed industry professionals and expert instructors.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">

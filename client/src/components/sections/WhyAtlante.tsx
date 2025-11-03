@@ -5,8 +5,8 @@ import { Link } from "wouter";
 const features = [
   {
     icon: Award,
-    title: "Award-Winning Service",
-    description: "Recognized for excellence in real estate transactions and customer satisfaction.",
+    title: "Client-Focused Excellence",
+    description: "Dedicated to providing personalized service and exceptional results for every client.",
   },
   {
     icon: Users,
@@ -22,13 +22,13 @@ const features = [
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400",
+    src: "/images/download.png",
     alt: "Professional real estate team meeting",
     className: "rounded-2xl shadow-lg w-full h-48 object-cover",
   },
   {
-    src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400",
-    alt: "Modern office building",
+    src: "/images/aerial-treasure-coast.png",
+    alt: "Aerial view of Treasure Coast Florida",
     className: "rounded-2xl shadow-lg w-full h-48 object-cover mt-8",
   },
   {
@@ -55,8 +55,8 @@ export default function WhyAtlante() {
                 Why Choose Atlante?
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Our integrated approach to real estate combines decades of experience with 
-                innovative solutions, providing you with comprehensive service across all 
+                Our integrated approach to real estate combines fresh innovation with
+                comprehensive expertise, providing you with professional service across all
                 aspects of property ownership and development.
               </p>
             </div>

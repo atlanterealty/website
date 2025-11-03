@@ -41,11 +41,7 @@ export default function Brokerage() {
             <div className="mb-8">
               <iframe
                 src="https://search.atlanterealtytc.com/idx/map/mapsearch"
-                className="w-full border-0 rounded-lg"
-                style={{
-                  minHeight: '1400px',
-                  height: '1400px'
-                }}
+                className="w-full border-0 rounded-lg h-[800px] md:h-[1200px] lg:h-[1400px]"
                 title="Property Map Search"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads"
                 loading="eager"

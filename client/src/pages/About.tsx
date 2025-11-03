@@ -4,6 +4,7 @@ import LeadForm from "@/components/forms/LeadForm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Award, Home, Globe, ExternalLink } from "lucide-react";
+import { Link } from "wouter";
 
 const values = [
   {
@@ -34,7 +35,7 @@ const team = [
     title: "Founder & CEO",
     credentials: "Licensed Real Estate Broker",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&face=center",
-    bio: "With over 15 years of experience in Treasure Coast real estate, Michael founded Atlante to provide comprehensive, client-focused real estate services."
+    bio: "Licensed real estate professional and founder of Atlante, Michael is dedicated to providing comprehensive, client-focused real estate services across the Treasure Coast."
   },
   {
     name: "Sarah Thompson",
@@ -67,8 +68,8 @@ export default function About() {
                   About <span className="text-gradient-gold">Atlante Realty</span>
                 </h1>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Founded on the principles of integrity, expertise, and client satisfaction, 
-                  Atlante Realty has been serving the Treasure Coast for over a decade. We're more 
+                  Founded on the principles of integrity, expertise, and client satisfaction,
+                  Atlante Realty is dedicated to serving the Treasure Coast community. We're more
                   than just a real estate company - we're your comprehensive partner in all things real estate.
                 </p>
                 
@@ -93,9 +94,9 @@ export default function About() {
               
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600"
-                  alt="Atlante Realty office building"
-                  className="rounded-2xl shadow-2xl w-full h-auto"
+                  src="/images/aerial-treasure-coast.png"
+                  alt="Aerial view of Treasure Coast Florida"
+                  className="rounded-2xl shadow-2xl w-full h-80 object-cover"
                 />
                 <div className="absolute inset-0 rounded-2xl ring-1 ring-black/10" />
               </div>
@@ -211,40 +212,39 @@ export default function About() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact-form" className="py-20 bg-card">
+        {/* Service Area Section */}
+        <section className="py-20 bg-card">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-serif font-bold text-foreground">
+                Our Service Area
+              </h2>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <div>
-                <h2 className="text-3xl font-serif font-bold text-foreground mb-6">
-                  Ready to Work with Us?
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Whether you're buying, selling, developing, or investing, our team is here to 
-                  guide you through every step of your real estate journey.
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Atlante Realty is a full-service brokerage serving the Treasure Coast—Martin, St. Lucie,
+                  and Indian River counties. We help buyers, sellers, investors, tenants, landlords, and
+                  developers move with confidence.
                 </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center">
-                    <Users className="h-5 w-5 text-primary mr-3" />
-                    <span className="text-muted-foreground">Personalized service tailored to your needs</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Award className="h-5 w-5 text-primary mr-3" />
-                    <span className="text-muted-foreground">Award-winning team with proven results</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Globe className="h-5 w-5 text-primary mr-3" />
-                    <span className="text-muted-foreground">Comprehensive real estate solutions</span>
-                  </div>
-                </div>
               </div>
               
-              <div className="flex justify-center">
-                <LeadForm
-                  title="Get in Touch"
-                  source="about"
-                />
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">Areas We Serve</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Stuart, Palm City, Jensen Beach, Hobe Sound, Port St. Lucie, Tradition,
+                  Fort Pierce, Vero Beach, Sebastian, and nearby communities.
+                </p>
+                
+                <Link href="/contact">
+                  <Button
+                    className="gradient-gold text-white hover:opacity-90 transition-opacity"
+                    data-testid="button-get-in-touch"
+                  >
+                    Get in Touch
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
