@@ -394,9 +394,9 @@ export default function PlanningDevelopment() {
               Schedule a consultation with our development experts to discuss your project goals and explore how we can help bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 className="gradient-gold text-white hover:opacity-90 transition-opacity"
-                onClick={() => window.open(import.meta.env.VITE_CALENDLY_DEVELOPMENT_URL || "https://calendly.com/atlante-development", "_blank")}
+                onClick={() => window.location.href = "/contact"}
               >
                 <Calendar className="h-4 w-4 mr-2" />
                 Schedule Consultation

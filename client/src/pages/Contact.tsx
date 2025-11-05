@@ -134,7 +134,7 @@ export default function Contact() {
                     <Button
                       variant="outline"
                       className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                      onClick={() => window.open(import.meta.env.VITE_CALENDLY_MAIN_URL || "https://calendly.com/atlante", "_blank")}
+                      onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                       data-testid="button-schedule-meeting"
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />

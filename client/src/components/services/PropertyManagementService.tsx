@@ -112,7 +112,7 @@ const benefits = [
   },
   {
     title: "Professional Service",
-    description: "Licensed property management with years of experience and local market knowledge.",
+    description: "Licensed property management with local market knowledge.",
     icon: Users,
     details: [
       "Licensed real estate professionals with property management expertise",

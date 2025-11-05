@@ -153,14 +153,14 @@ export default function AgentDetail() {
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 {agent.yearsExperience && (
                   <Card>
                     <CardContent className="p-6 text-center">
                       <div className="text-3xl font-bold text-primary mb-2" data-testid="agent-experience">
-                        {agent.yearsExperience}+
+                        {agent.yearsExperience}
                       </div>
-                      <div className="text-sm text-muted-foreground">Years Experience</div>
+                      <div className="text-sm text-muted-foreground">Experience Level</div>
                     </CardContent>
                   </Card>
                 )}
@@ -171,21 +171,7 @@ export default function AgentDetail() {
                       <div className="text-2xl font-bold text-primary mb-2" data-testid="agent-sales">
                         {agent.totalSales}
                       </div>
-                      <div className="text-sm text-muted-foreground">Total Sales</div>
-                    </CardContent>
-                  </Card>
-                )}
-                
-                {agent.license && (
-                  <Card className="col-span-2">
-                    <CardContent className="p-6 text-center">
-                      <div className="flex items-center justify-center mb-2">
-                        <Award className="h-5 w-5 text-primary mr-2" />
-                        <span className="font-semibold text-foreground">Licensed Professional</span>
-                      </div>
-                      <div className="text-sm text-muted-foreground" data-testid="agent-license">
-                        License: {agent.license}
-                      </div>
+                      <div className="text-sm text-muted-foreground">Focus Area</div>
                     </CardContent>
                   </Card>
                 )}
@@ -239,7 +225,7 @@ export default function AgentDetail() {
                       </p>
                       <Button
                         className="gradient-gold text-white hover:opacity-90 transition-opacity"
-                        onClick={() => window.open(agent.calendlyLink, '_blank')}
+                        onClick={() => window.location.href = "/contact"}
                         data-testid="agent-calendly-button"
                       >
                         <Calendar className="h-4 w-4 mr-2" />

@@ -357,7 +357,7 @@ export default function Development() {
                   </p>
                   <Button
                     className="w-full gradient-gold text-white hover:opacity-90 transition-opacity"
-                    onClick={() => window.open(import.meta.env.VITE_CALENDLY_DEVELOPMENT_URL || "https://calendly.com/atlante-development", "_blank")}
+                    onClick={() => window.location.href = "/contact"}
                     data-testid="button-schedule-calendly"
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
