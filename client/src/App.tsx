@@ -11,9 +11,10 @@ import AgentDetail from "@/pages/AgentDetail";
 import School from "@/pages/School";
 import Services from "@/pages/Services";
 import About from "@/pages/About";
-import Blog from "@/pages/Blog";
-import BlogPost from "@/pages/BlogPost";
 import Contact from "@/pages/Contact";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
+import Accessibility from "@/pages/Accessibility";
 
 function Router() {
   return (
@@ -25,9 +26,10 @@ function Router() {
       <Route path="/school" component={School} />
       <Route path="/services" component={Services} />
       <Route path="/about" component={About} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/accessibility" component={Accessibility} />
       <Route component={NotFound} />
     </Switch>
   );

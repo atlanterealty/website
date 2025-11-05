@@ -28,7 +28,6 @@ const navigation = [
     submenu: [
       { name: "Our Company", href: "/about" },
       { name: "Our Agents", href: "/agents" },
-      { name: "News & Updates", href: "/blog" },
     ]
   },
 ];

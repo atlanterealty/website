@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,7 +11,6 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
 
 const leadSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -55,30 +54,49 @@ export default function LeadForm({
     },
   });
 
-  const leadMutation = useMutation({
-    mutationFn: async (data: LeadFormData) => {
-      const response = await apiRequest("POST", "/api/lead", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      form.reset();
-      toast({
-        title: "Message sent successfully!",
-        description: "An agent will contact you within 24 hours.",
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onSubmit = async (data: LeadFormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "66c033bd-706a-4757-8481-52b8a811bd47");
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("phone", data.phone || "");
+      formData.append("message", data.message);
+      formData.append("property_interest", data.propertyInterest || "");
+      formData.append("source", data.source || "");
+      formData.append("agent_id", data.agentId || "");
+      formData.append("subject", `New Lead from ${data.name} via Atlante Realty Website`);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
-      if (onSuccess) onSuccess();
-    },
-    onError: () => {
+
+      const result = await response.json();
+
+      if (result.success) {
+        form.reset();
+        toast({
+          title: "Message sent successfully!",
+          description: "An agent will contact you within 24 hours.",
+        });
+        if (onSuccess) onSuccess();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
       toast({
         title: "Failed to send message",
         description: "Please try again or call us directly.",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = (data: LeadFormData) => {
-    leadMutation.mutate(data);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -93,7 +111,7 @@ export default function LeadForm({
             <Input
               id="name"
               {...form.register("name")}
-              disabled={leadMutation.isPending}
+              disabled={isSubmitting}
               data-testid="input-lead-name"
             />
             {form.formState.errors.name && (
@@ -109,7 +127,7 @@ export default function LeadForm({
               id="email"
               type="email"
               {...form.register("email")}
-              disabled={leadMutation.isPending}
+              disabled={isSubmitting}
               data-testid="input-lead-email"
             />
             {form.formState.errors.email && (
@@ -125,7 +143,7 @@ export default function LeadForm({
               id="phone"
               type="tel"
               {...form.register("phone")}
-              disabled={leadMutation.isPending}
+              disabled={isSubmitting}
               data-testid="input-lead-phone"
             />
           </div>
@@ -153,7 +171,7 @@ export default function LeadForm({
               rows={4}
               placeholder="Tell us about your real estate needs..."
               {...form.register("message")}
-              disabled={leadMutation.isPending}
+              disabled={isSubmitting}
               data-testid="textarea-lead-message"
             />
             {form.formState.errors.message && (
@@ -168,7 +186,7 @@ export default function LeadForm({
               id="consent"
               checked={form.watch("consent")}
               onCheckedChange={(checked) => form.setValue("consent", !!checked)}
-              disabled={leadMutation.isPending}
+              disabled={isSubmitting}
               data-testid="checkbox-lead-consent"
             />
             <Label htmlFor="consent" className="text-sm">
@@ -184,10 +202,10 @@ export default function LeadForm({
           <Button
             type="submit"
             className="w-full gradient-gold text-white hover:opacity-90 transition-opacity"
-            disabled={leadMutation.isPending}
+            disabled={isSubmitting}
             data-testid="button-lead-submit"
           >
-            {leadMutation.isPending ? (
+            {isSubmitting ? (
               <>
                 <Loader2 className="h-4 w-4 mr-2 animate-spin" />
                 Sending...

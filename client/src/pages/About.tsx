@@ -31,25 +31,11 @@ const values = [
 
 const team = [
   {
-    name: "Michael Rodriguez",
-    title: "Founder & CEO",
+    name: "Quinesha Nikki Hawkins",
+    title: "Broker/Owner/Developer",
     credentials: "Licensed Real Estate Broker",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&face=center",
-    bio: "Licensed real estate professional and founder of Atlante, Michael is dedicated to providing comprehensive, client-focused real estate services across the Treasure Coast."
-  },
-  {
-    name: "Sarah Thompson",
-    title: "Director of Operations", 
-    credentials: "MBA, Real Estate Expert",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b830?w=300&h=300&fit=crop&face=center",
-    bio: "Sarah oversees daily operations and strategic planning, ensuring every department delivers exceptional service to our clients."
-  },
-  {
-    name: "David Chen",
-    title: "Development Director",
-    credentials: "Licensed Contractor & Developer", 
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&face=center",
-    bio: "David leads our development consulting services, bringing extensive experience in construction and project management."
+    image: "/images/nikki-hawkins.jpg",
+    bio: "Nikki Hawkins is a real estate broker, community developer, and founder of Jumpstart Treasure Coast, where she created the Keys to Home Pathway™ to help local families move from renting to owning. Through Atlante Realty, Nikki serves residential, commercial, and small-scale development clients across the Treasure Coast—pairing clear strategy, smart partnerships, and measurable community impact on every deal."
   }
 ];
 
@@ -184,7 +170,7 @@ export default function About() {
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid lg:grid-cols-1 gap-8 max-w-md mx-auto">
               {team.map((member, index) => (
                 <Card key={index} className="text-center hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-8">

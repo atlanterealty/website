@@ -9,22 +9,22 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: "(772) 555-0123",
-    action: "tel:(772) 555-0123",
+    details: "(561) 494-5026",
+    action: "tel:(561) 494-5026",
     actionText: "Call Now",
   },
   {
     icon: Mail,
     title: "Email",
-    details: "info@atlante.com",
-    action: "mailto:info@atlante.com",
+    details: "info@atlanterealtytc.com",
+    action: "mailto:info@atlanterealtytc.com",
     actionText: "Send Email",
   },
   {
     icon: MapPin,
     title: "Office Location",
-    details: "123 Main Street\nVero Beach, FL 32963",
-    action: "https://maps.google.com/?q=123+Main+Street+Vero+Beach+FL+32963",
+    details: "789 SW Federal Highway, STE 201\nStuart, FL 34994",
+    action: "https://maps.google.com/?q=789+SW+Federal+Highway+STE+201+Stuart+FL+34994",
     actionText: "Get Directions",
   },
 ];
@@ -33,39 +33,6 @@ const officeHours = [
   { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
   { day: "Saturday", hours: "10:00 AM - 4:00 PM" },
   { day: "Sunday", hours: "By Appointment" },
-];
-
-const departments = [
-  {
-    title: "Residential Sales",
-    email: "sales@atlante.com",
-    phone: "(772) 555-0124",
-    description: "Buying or selling residential properties",
-  },
-  {
-    title: "Commercial Sales",
-    email: "commercial@atlante.com", 
-    phone: "(772) 555-0125",
-    description: "Commercial real estate transactions",
-  },
-  {
-    title: "Property Management",
-    email: "management@atlante.com",
-    phone: "(772) 555-0126", 
-    description: "Rental property management services",
-  },
-  {
-    title: "Real Estate School",
-    email: "school@atlante.com",
-    phone: "(772) 555-0127",
-    description: "Education and licensing programs",
-  },
-  {
-    title: "Development Consulting", 
-    email: "development@atlante.com",
-    phone: "(772) 555-0128",
-    description: "Development and consulting services",
-  },
 ];
 
 export default function Contact() {
@@ -153,25 +120,6 @@ export default function Contact() {
                   </CardContent>
                 </Card>
 
-                {/* Emergency Contact */}
-                <Card>
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-semibold text-foreground mb-4">
-                      Emergency Contact
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      For urgent property management issues outside of business hours:
-                    </p>
-                    <Button
-                      className="w-full gradient-gold text-white hover:opacity-90 transition-opacity"
-                      onClick={() => window.open('tel:(772) 555-0199', '_self')}
-                      data-testid="button-emergency-contact"
-                    >
-                      <Phone className="h-4 w-4 mr-2" />
-                      Emergency Line: (772) 555-0199
-                    </Button>
-                  </CardContent>
-                </Card>
 
                 {/* Schedule Meeting */}
                 <Card>
@@ -207,27 +155,30 @@ export default function Contact() {
                 Visit Our Office
               </h2>
               <p className="text-muted-foreground">
-                Located in the heart of Vero Beach, convenient to all Treasure Coast communities
+                Located in the heart of Stuart, convenient to all Treasure Coast communities
               </p>
             </div>
             
-            {/* Map Placeholder */}
-            <div className="bg-muted rounded-2xl h-96 flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">Interactive Map</h3>
-                <p className="text-muted-foreground mb-4 max-w-md">
-                  Embed Google Maps or another mapping service to show your office location
-                </p>
-                <Button
-                  variant="outline"
-                  onClick={() => window.open("https://maps.google.com/?q=123+Main+Street+Vero+Beach+FL+32963", "_blank")}
-                  data-testid="button-view-map"
-                >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View in Google Maps
-                </Button>
-              </div>
+            {/* Interactive OpenStreetMap */}
+            <div className="bg-muted rounded-2xl h-96 overflow-hidden">
+              <iframe
+                src={`https://www.openstreetmap.org/export/embed.html?bbox=${-80.25505284690742 - 0.01},${27.192753056680115 - 0.005},${-80.25505284690742 + 0.01},${27.192753056680115 + 0.005}&layer=mapnik&marker=${27.192753056680115},${-80.25505284690742}`}
+                style={{ border: 0, width: '100%', height: '100%' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Atlante Realty Office Location"
+              ></iframe>
+            </div>
+            <div className="text-center mt-4">
+              <Button
+                variant="outline"
+                onClick={() => window.open("https://maps.google.com/?q=789+SW+Federal+Highway+STE+201+Stuart+FL+34994", "_blank")}
+                data-testid="button-view-map"
+              >
+                <ExternalLink className="h-4 w-4 mr-2" />
+                View in Google Maps
+              </Button>
             </div>
           </div>
         </section>
